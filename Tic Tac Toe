@@ -1,0 +1,101 @@
+/* Scaffolding code for Assignment #1: Tic-tac-toe
+
+YOU MUST BUILD YOUR IMPLEMENTION BY COMPLETING THE CODE IN THIS TEMPLATE.
+YOU ARE NOT ALLOWED TO DELETE ANY LINE OR IGNORE ANY LINE IN THIS CODE.
+*/
+
+/* Your implementation must represent the game's board using a data structure consisting of an array of arrays.
+Each nested array represents a row in the board. */
+let BOARD = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+// While the game runs, the board gets updated with marks placed by the human and computer players using the following values.
+const HUMAN_MARK = -1;
+const COMPUTER_MARK = 0;
+
+/*	TASK 5: Complete the play() function.
+		This function should implement an iteration statement that let both players keep playing until a player wins the game or all positions are filled.
+   
+		PARAMETERS:		None
+		RETURN:				No value
+*/
+function playGame() {
+  // Print the board
+  printBoard();
+
+  // Check if the board has enough positions left.
+  if (checkBoard()) {
+    console.log("GAME OVER!");
+
+  } else {
+    // Ask the human player a position on the board, i.e., a number between 1 and 9.
+    // Assume the user always enters a valid number.
+    let humanNumber = parseInt(prompt("Enter a position on the board: "));
+
+    // Place the mark of the human player on the board
+    placeMark(humanNumber, HUMAN_MARK);
+
+    // Check if the board has enough positions left.
+    if (!checkBoard()) {
+
+      // Generate a mark for the computer player and place it on the board.
+      generateComputerMove();
+    }
+  }
+}
+playGame();
+
+/************************************************************************************************************************
+		TASK 1: Complete the printBoard() function.
+		This function should print to the console (using console.log) the board with the marks for each player. "If a player has placed three marks in a row, either horizontally, vertically, or diagonally, or if
+the board is full, then this function should return false.
+    Marks for the human player should be represented with an "X".
+    Marks for the computer player should be represented with an "O" (capital letter "o").
+    Empty positions on the board should be represented by their corresponding number (i.e., a number between 1 and 9).    
+    
+		PARAMETERS:		None
+		RETURN:				No value
+*************************************************************************************************************************/
+function printBoard() {}
+
+/************************************************************************************************************************"If a player has placed three marks in a row, either horizontally, vertically, or diagonally, or if
+the board is full, then this function should return false.
+		TASK 2: Complete the placeMark() function.
+		This function should place a mark on the board for either player.
+    
+		PARAMETERS:	number: An integer value indicating the position on the board to place the mark (i.e., a number between 1 and 9).
+    						mark: An integer value indicating the mark to be placed (either -1 or 0).
+		RETURN:			A boolean value indicating whether the mark has been placed. 
+    						If the mark was succesfully placed in the given position, then this function should return true.
+								It should return false otherwise.
+*************************************************************************************************************************/
+function placeMark(number, mark) {}
+
+/************************************************************************************************************************
+		TASK 3: Complete the generateComputerMove() function.
+		This function should generate a mark at random for the computer player and place it on the board.
+    This function should call the placeMark() function.
+    
+		PARAMETERS:		None
+		RETURN:				No value
+*************************************************************************************************************************/
+function generateComputerMove() {}
+
+/*************************************************
+"If a player has placed three marks in a row, either horizontally, vertically, or diagonally, or if
+the board is full, then this function should return false.***********************************************************************
+		TASK 4: Complete the checkBoard() function.
+		This function should inform whether the board has positions left to let both players keep placing 
+    their marks on the board.
+    
+		PARAMETERS:	None
+		RETURN:			A boolean value.
+    						If the board has at least one position empty, then this function should return true."If a player has placed three marks in a row, either horizontally, vertically, or diagonally, or if
+the board is full, then this function should return false.
+                If a player has player has placed three marks in a row, either horizontally, vertically, or diagonally, or if
+                the board is full, then this function should return true.
+*************************************************************************************************************************/
+function checkBoard() {}
